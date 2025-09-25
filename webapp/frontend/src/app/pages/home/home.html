@@ -1,0 +1,18 @@
+<div class=" flex flex-col m-5 gap-5">
+  <div class="flex flex-row gap-3">
+    <img src="logo.svg" alt="Logo">
+    <span class="font-heading text-primary text-3xl"> My Today's Mails </span>
+  </div>
+  <!--Table header-->
+  <div class="flex flex-row gap-3 rounded-div bg-antique-white p-4 justify-between not-md:hidden">
+    <span class="font-body">Expéditeur</span>
+    <span class="font-body">Objet</span>
+    <span class="font-body">Date et heure de réception</span>
+    <span class="font-body">Résumé des mails </span>
+  </div>
+
+  <!--  Table body-->
+  @for (mail of mailList; track mail.date) {
+    <app-mail-component [expediteur]="mail.expediteur" [objet]="mail.objet" [date]="mail.date" [resume]="mail.resume"></app-mail-component>
+  }
+</div>

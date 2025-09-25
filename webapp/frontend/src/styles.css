@@ -11,8 +11,15 @@
   --color-text_inactive: #828282;
   --color-dashboard-background: #FAFAFA;
   --color-strokes: #E0E0E0;
-  --font-heading: "JetBrains Mono", sans-serif;
-  --font-body: "Open Sans", sans-serif;
+  --font-heading: "Oswald", sans-serif;
+  --font-body: "PT Serif", sans-serif;
   --radius-div: 5px;
   --radius-button: 10px;
 }
+
+/*.oswald {*/
+/*           font-family: "Oswald", sans-serif;*/
+/*           font-optical-sizing: auto;*/
+/*           font-weight: <weight>;*/
+/*           font-style: normal;*/
+/*         }*/
