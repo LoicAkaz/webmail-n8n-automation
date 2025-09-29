@@ -1,0 +1,25 @@
+@import "tailwindcss";/* You can add global styles to this file, and also import other style files */
+
+@theme{
+  --color-primary: #317039;
+  --color-secondary: #F1BE49;
+  --color-tertiary: #CC4B24;
+  --color-background: #FFFBEB;
+  --color-papaya-whip: #FFF1D4;
+  --color-antique-white: #F8EDD9;
+  --color-green: #27AE60;
+  --color-text_inactive: #828282;
+  --color-dashboard-background: #FAFAFA;
+  --color-strokes: #E0E0E0;
+  --font-heading: "Oswald", sans-serif;
+  --font-body: "PT Serif", sans-serif;
+  --radius-div: 5px;
+  --radius-button: 10px;
+}
+
+/*.oswald {*/
+/*           font-family: "Oswald", sans-serif;*/
+/*           font-optical-sizing: auto;*/
+/*           font-weight: <weight>;*/
+/*           font-style: normal;*/
+/*         }*/
