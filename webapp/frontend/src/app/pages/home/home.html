@@ -3,16 +3,41 @@
     <img src="logo.svg" alt="Logo">
     <span class="font-heading text-primary text-3xl"> My Today's Mails </span>
   </div>
+  <div class="flex flex-col gap-3 mb-5">
+    <span class="font-heading text-2xl"> Résumé global des mails d'aujourd'hui </span>
+
+    <div>{{ global_resume }}</div>
+  </div>
+  <span class="font-heading text-2xl"> Liste des mails d'aujourd'hui </span>
   <!--Table header-->
-  <div class="flex flex-row gap-3 rounded-div bg-antique-white p-4 justify-between not-md:hidden">
-    <span class="font-body">Expéditeur</span>
-    <span class="font-body">Objet</span>
-    <span class="font-body">Date et heure de réception</span>
-    <span class="font-body">Résumé des mails </span>
+  <div class="grid grid-rows-1 grid-cols-5 rounded-div bg-antique-white p-4 not-md:hidden">
+    <span class="font-body col-span-1">Expéditeur</span>
+    <span class="font-body col-span-1">Objet</span>
+    <span class="font-body col-span-1">Date et heure de réception</span>
+    <span class="font-body col-span-1">Résumé des mails </span>
+    <span class="font-body col-span-1 flex justify-center">Options </span>
   </div>
 
   <!--  Table body-->
-  @for (mail of mailList; track mail.date) {
-    <app-mail-component [expediteur]="mail.expediteur" [objet]="mail.objet" [date]="mail.date" [resume]="mail.resume"></app-mail-component>
+  @for (mail of mailList; track mail.output.date) {
+    <app-mail-component [expediteur]="mail.output.from1" [objet]="mail.output.subject" [date]="mail.output.date"
+                        [resume]="mail.output.summarized" (replyAction)="replyModal($event)"></app-mail-component>
   }
+
+ @if(reply){
+   <div
+     class="transition-all duration-600 z-2 ease-in-out w-screen flex justify-center items-center fixed top-0 left-0 bottom-0 backdrop-filter backdrop-brightness-75 backdrop-blur-md">
+     <app-mail-modal class="md: md:w-[50%] w-[80%] lg:w-[25%] font-body" [to]="data.expediteur" (cancelAction)="reply=false" (clickOutside)="reply=false"
+                     [message]="data.resume" [subject]="data.objet"/>
+
+
+     <!--    <app-request-->
+     <!--      *ngIf="selectedCategory=='cotisation'"-->
+     <!--      (clickOutside)="requestUser=false"-->
+     <!--      class="bg-white rounded-div  md:w-[50%] w-[80%] lg:w-[25%] h-fit "-->
+     <!--      [type]="'entree'" [data]="data" [cotisation]="1" [year]="selectedYear" (cancelAction)="requestUser=false"-->
+     <!--      (validateAction)="onSelectionChanged()"-->
+     <!--    />-->
+   </div>
+ }
 </div>

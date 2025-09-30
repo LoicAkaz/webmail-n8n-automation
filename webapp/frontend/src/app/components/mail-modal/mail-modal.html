@@ -1,0 +1,47 @@
+<div class="h-auto flex flex-col gap-5 p-5 bg-white rounded-div">
+  <!--  Title-->
+  <div class="font-heading font-bold w-full">
+    Répondre au mail
+  </div>
+  <!--  Body-->
+  <div class=" w-full" >
+    <form class="flex flex-col gap-5"
+          [formGroup]="replyForm">
+      <div class="flex flex-col gap-4">
+        <!--    Objet -->
+        <div class="border-2 border-strokes rounded-div h-[50px] w-full flex gap-2.5 items-center p-1.5">
+          <i class="hgi-stroke hgi-user"></i>
+          <input type="text" class=" w-full outline-0" placeholder="Objet"
+                 formControlName="subject">
+        </div>
+        <!--    corps du mail-->
+        <div class="w-full">
+        <textarea [formControlName]="'message'"
+                  rows="5"
+                  cols="20"
+                  class="outline-0 w-full p-2 text-black overflow-ellipsis border-2 border-strokes rounded-div"
+                  placeholder="Contenu du mail">
+        </textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!--  Buttons-->
+  <div class=" h-[50px] flex gap-2.5 items-center">
+    <button
+      (click)="generateReply()"
+      class="bg-secondary text-white text-[12px] h-[100%] w-full rounded-button">
+      <span>Générer réponse</span>
+    </button>
+    <button
+      (click)="sendReply()"
+      class="bg-primary text-white text-[12px] h-[100%] w-full rounded-button">
+      <span>Envoyer</span>
+    </button>
+    <button (click)="cancelActionEmitter()"
+            class="bg-white text-primary text-[12px] h-[100%] w-full border-2 border-primary rounded-button">
+      Annuler
+    </button>
+  </div>
+</div>

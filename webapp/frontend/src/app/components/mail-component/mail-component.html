@@ -1,18 +1,21 @@
-<div class="md:border-b-2 md:border-b-gray-600 not-md:border-2 not-md:border-gray-600 flex flex-col h-auto w-full p-4 md:flex-row font-body">
-  <div>
-    <span class="md:hidden">Expéditeur</span>
+<div class="md:border-b-2 md:border-b-gray-600 not-md:border-2 not-md:border-gray-600 md:grid flex flex-col gap-3 w-full p-4 md:grid-cols-5 md:grid-rows-1 font-body">
+  <div class="md:col-span-1 row-span-1">
+    <span class="md:hidden">Expéditeur : </span>
     <span>{{ expediteur }}</span>
   </div>
-  <div>
-    <span class="md:hidden">Objet</span>
+  <div class="md:col-span-1 row-span-1">
+    <span class="md:hidden">Objet : </span>
     <span>{{ objet }}</span>
   </div>
-  <div>
-    <span class="md:hidden">Date & heure</span>
+  <div class="md:col-span-1 row-span-1">
+    <span class="md:hidden">Date & heure : </span>
     <span>{{ date }}</span>
   </div>
-  <div>
-    <span class="md:hidden">Résumé :</span>
+  <div class="md:col-span-1 row-span-1">
+    <span class="md:hidden">Résumé : </span>
     <span>{{ resume }}</span>
+  </div>
+  <div class="md:col-span-1 row-span-1 flex justify-center items-center">
+    <button class="bg-primary text-white rounded-div p-2" (click)="replyActionEmitter()">Répondre</button>
   </div>
 </div>

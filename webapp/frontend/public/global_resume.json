@@ -1,0 +1,12 @@
+{
+  "content": {
+    "parts": [
+      {
+        "text": "[\n  \"Loic Akazong a envoyé un mail de test pour vérifier l'automatisation des emails et demande confirmation de la réception et du traitement. Plusieurs alertes de sécurité Google ont été déclenchées concernant l'accès de n8n.cloud au compte, la création et la suppression de mots de passe d'application, une connexion Windows et des applications non vérifiées accédant aux données du compte. Google recommande de vérifier l'activité et de sécuriser le compte.\"\n]"
+      }
+    ],
+    "role": "model"
+  },
+  "finishReason": "STOP",
+  "avgLogprobs": -0.2518181067246657
+}
